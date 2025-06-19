@@ -397,7 +397,7 @@ new_hobby = st.text_input("Add a Hobby or Interest", key="hobby_input")
 if st.button("➕ Add Hobby"):
     if new_hobby:
         st.session_state.hobbies.append(new_hobby)
-        st.experimental_rerun()
+        st.rerun()
 
 # Display and allow removal of hobbies
 for i, hobby in enumerate(st.session_state.hobbies):
@@ -405,5 +405,5 @@ for i, hobby in enumerate(st.session_state.hobbies):
     cols[0].markdown(f"- {hobby}")
     if cols[1].button("❌", key=f"remove_hobby_{i}"):
         st.session_state.hobbies.pop(i)
-        st.experimental_rerun()
+        st.rerun()
 
